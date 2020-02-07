@@ -1,4 +1,3 @@
-CMD sudo docker exec -ti -u root jenkins bash
 FROM node:12
 WORKDIR /app
 ADD . /app
