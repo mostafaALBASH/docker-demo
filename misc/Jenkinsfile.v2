@@ -9,9 +9,6 @@ node {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
      myTestContainer.inside {
-       sh 'chown -R $(whoami) /usr/lib/node_modules/'
-       sh 'chown -R $(whoami) /usr/bin/node'
-       sh 'chown -R $(whoami) /usr/bin/npm'
        sh 'npm install --only=dev'
        sh 'npm test'
      }
