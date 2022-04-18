@@ -9,7 +9,7 @@ node {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
      myTestContainer.inside {
-       sh 'chmod 777 node_modules'
+       sh 'chmod 777 /var/lib/jenkins/workspace'
        sh 'npm install --only=dev'
        sh 'npm test'
      }
