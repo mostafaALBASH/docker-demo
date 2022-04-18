@@ -5,11 +5,6 @@ node {
      sh "git rev-parse --short HEAD > .git/commit-id"
      commit_id = readFile('.git/commit-id').trim()
    }
-   environment {
-
-    // or override default cache directory (~/.npm)
-    NPM_CONFIG_CACHE = "myapp/.npm"
-   }
    stage('test') {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
