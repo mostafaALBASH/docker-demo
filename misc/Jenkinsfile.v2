@@ -10,8 +10,7 @@ node {
      myTestContainer.pull()
      myTestContainer.inside {
 
-     sh 'npm install -g less'
-       sh 'npm install --only=dev'
+       sh 'npm install --only=dev --unsafe-perm=true --allow-root'
        sh 'npm test'
      }
    }
