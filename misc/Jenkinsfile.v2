@@ -10,7 +10,7 @@ node {
      myTestContainer.pull()
      myTestContainer.inside {
 
-     sh 'node install -g less'
+     sh 'npm install -g less'
        sh 'npm install --only=dev'
        sh 'npm test'
      }
