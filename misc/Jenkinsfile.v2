@@ -8,7 +8,7 @@ node {
    environment {
 
     // or override default cache directory (~/.npm)
-    NPM_CONFIG_CACHE = "/var/lib/jenkins/workspace/.npm"
+    NPM_CONFIG_CACHE = "~/.npm"
    }
    stage('test') {
      def myTestContainer = docker.image('node:4.6')
