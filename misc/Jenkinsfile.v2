@@ -8,7 +8,7 @@ node {
    environment {
 
     // or override default cache directory (~/.npm)
-    NPM_CONFIG_CACHE = "~/.npm"
+    NPM_CONFIG_CACHE = "myapp/.npm"
    }
    stage('test') {
      def myTestContainer = docker.image('node:4.6')
