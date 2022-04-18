@@ -9,7 +9,7 @@ node {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
      myTestContainer.inside {
-       sh 'chmod 777'
+       sh 'chmod 666 /var/run/docker.sock'
        sh 'npm install --only=dev'
        sh 'npm test'
      }
