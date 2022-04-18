@@ -6,8 +6,11 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    environment {
-        HOME = '.'
-    }
+       // Override HOME to WORKSPACE
+       HOME = "${WORKSPACE}"
+       // or override default cache directory (~/.npm)
+       NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+   }
    stage('test') {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
